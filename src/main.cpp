@@ -1,8 +1,6 @@
 #include <SFML/Graphics.hpp>
 #include <SFML/Audio.hpp>
 #include <SFML/Window.hpp>
-#include <optional>
-#include <iostream>
 
 int main() {
 sf::RenderWindow window(
