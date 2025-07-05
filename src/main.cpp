@@ -19,8 +19,6 @@ sf::RenderWindow window(
                 window.close();
             }
            window.clear(sf::Color::White);
-            sf::CircleShape circle;
-            window.draw(circle);
             window.display();
         }
     }
