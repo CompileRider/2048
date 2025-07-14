@@ -1,3 +1,9 @@
+<div align="center">
+  <img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&customColorList=6,11,12&height=300&section=header&text=bitforge&fontSize=70&fontAlignY=35&animation=twinkling&fontColor=ffffff" />
+</div>
+
+
+
 [![Button Icon]][Link]
 
 [Button Icon]: https://img.shields.io/badge/Installation-0b5394?style=for-the-badge&logoColor=white&logo=DocuSign
