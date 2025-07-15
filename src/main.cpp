@@ -1,22 +1,15 @@
-#include <SFML/Graphics.hpp>
-#include <SFML/Window.hpp>
+#include <SFML/graphics.hpp>
 
-int main() {
-sf::RenderWindow window(
-    sf::VideoMode(800, 780),
-    "2048",
-    sf::Style::Titlebar | sf::Style::Close
-);
+int main()
+{
+    sf::Window window(sf::VideoMode({800, 600}), "My window");
 
-    window.setFramerateLimit(30);
-    sf::Event event;
-    while (window.isOpen()) {
-        while (window.pollEvent(event)) {
-            if (event.type == sf::Event::Closed) {
+    while (window.isOpen())
+    {
+        while (const std::optional event = window.pollEvent())
+        {
+            if (event->is<sf::Event::Closed>())
                 window.close();
-            }
-           window.clear(sf::Color::White);
-            window.display();
         }
     }
 }
