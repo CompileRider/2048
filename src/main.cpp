@@ -11,18 +11,21 @@ int main() {
         return 1;
     }
     sf::Sprite sprite(texture);
+    auto image = sf::Image{};
+    if (!image.loadFromFile("assets/2048.png")) {
+        return 1;
+    }
 
-
+    window.setIcon(image.getSize(), image.getPixelsPtr());
+    window.setFramerateLimit(60);
     while (window.isOpen()) {
-        window.setFramerateLimit(60);
         while (const std::optional event = window.pollEvent()) {
             if (event->is<sf::Event::Closed>()) {
                 window.close();
             }
-
-            window.clear(sf::Color::White);
-            window.draw(sprite);
-            window.display();
         }
+        window.clear(sf::Color::White);
+        window.draw(sprite);
+        window.display();
     }
 }
