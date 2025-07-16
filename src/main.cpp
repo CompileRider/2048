@@ -11,6 +11,7 @@ int main() {
     if (!texture.loadFromFile("assets/gameBoard.png")) {
         return 1;
     }
+    texture.setSmooth(true);
     sf::Sprite sprite(texture);
     auto image = sf::Image{};
     if (!image.loadFromFile("assets/2048.png")) {
