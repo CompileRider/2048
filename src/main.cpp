@@ -1,4 +1,5 @@
 #include <SFML/Graphics.hpp>
+#include <iostream>
 
 sf::RenderWindow CreateWindow() {
     sf::RenderWindow window(sf::VideoMode({768, 768}), "2048", sf::Style::Close | sf::Style::Titlebar);
@@ -18,6 +19,14 @@ int main() {
 
     window.setIcon(image.getSize(), image.getPixelsPtr());
     window.setFramerateLimit(60);
+
+    sf::Vector2u windowSize = window.getSize();
+    sf::Vector2u textureSize = texture.getSize();
+    float scaleX = static_cast<float>(windowSize.x) / textureSize.x;
+    float scaleY = static_cast<float>(windowSize.y) / textureSize.y;
+    float scale = std::min(scaleX, scaleY);
+    sprite.setScale(sf::Vector2f(scale, scale));
+
     while (window.isOpen()) {
         while (const std::optional event = window.pollEvent()) {
             if (event->is<sf::Event::Closed>()) {
